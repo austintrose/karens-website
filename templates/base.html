@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="This site describes Karen Price's experience and consulting services for computer assisted language learning and language teaching."/>
+    <meta name="keywords" content="France, teaching, workshop, emerging technology, prototypes, Cambridge, TESOL, Harvard, BU, Boston University, consulting, developing, development, SLA, second language acquisition, prototyping. Language technology, consultant, language learning, teacher-training, workshops, CALL, Computer-assisted language learning, technology, ESL, language acquisition, massachusetts"/>
+    <meta name="robots" content="index, follow, noarchive"/>
+    <meta name="googlebot" content="noarchive"/>
+
+    <title>
+    {% block title %}
+        Consult Karen Price
+    {% endblock %}
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Austin Rose">
+
+    <link href="{{ url_for('static', filename="css/bootstrap.min.css") }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename="css/bootstrap-responsive.min.css") }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename="css/socialicons.css") }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename="css/glyphicons.css") }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename="css/halflings.css") }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename="css/template.css") }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename="css/custom.css") }}" rel="stylesheet">
+    {# <link href="{{ url_for('static', filename="css/colors/color-nytimes.css") }}" rel="stylesheet" id="colorcss"> #}
+    <link href="{{ url_for('static', filename="css/colors/color-blue.css") }}" rel="stylesheet" id="colorcss">
+
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+
+    <script src="{{ url_for('static', filename="js/modernizr.js") }}"></script>
+
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="{{ url_for('static', filename='js/html5shiv.js') }}"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+
+        {# <img src="{{ url_for('static', filename='img/header.png') }}"> #}
+    <div class="row">
+        <div class="offset1 span5">
+            <h1 id="logo_text">Karen Price</h1>
+            <h3 id="logo_font">Language and Technology Consulting</h3>
+        </div>
+        <div class="span5">
+            <img id="logoimg" width="400" height="300" src="{{ url_for('static', filename='img/karen.jpg') }}">
+        </div>
+    </div>
+
+
+    <hr>
+
+    <div class="main-content">
+        <div class="row">
+            <div class="span3">
+                <div class="side-bar">
+
+                    <ul id="nav" class="nav pull-right hidden-phone l_tinynav1">
+                        {% for endpoint,text in
+                            [
+                                ('blog','Blog'),
+                                ('about','About Me'),
+                                ('consulting','Consulting'),
+                                ('projects','Projects'),
+                                ('publications','Publications'),
+                                ('advisory_boards','Advisory<br>Boards'),
+                                ('conference_papers','Conference<br>Papers'),
+                                ('keynotes_and_plenaries','Keynotes &amp;<br> Plenaries'),
+                                ('teaching_and_workshops','Teaching &amp;<br> Workshops'),
+                                ('contact','Contact')
+                            ]
+                        %}
+
+                        <li{% if endpoint == request.endpoint %} class="active"{% endif %}>
+                            <h1><a href="/{{ endpoint }}/">{{ text|safe }}</a></h1>
+                        </li>
+
+                        {% endfor %}
+
+                    </ul>
+
+                </div>
+            </div>
+
+            <div class="span9 line-left">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row">
+        <div class="copyright span12">Copyright Karen Price 2013</div>
+    </div>
+
+</div>
+<!-- End Container -->
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="{{ url_for('static', filename='js/jquery-1.10.2.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+<script src="{{ url_for('static', filename='js/tinynav.js') }}"></script>
+<script src="{{ url_for('static', filename='js/template.js') }}"></script>
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".more-text").hide();
+
+        $(".more-link").click(function(e){
+            // Expand the "more-text" div
+            $(this).parent("p").next(".more-text").slideToggle();
+
+            // Hide the "read more" text
+            $(this).toggle();
+
+            e.preventDefault();
+        })
+
+        $(".less-link").click(function(e) {
+            // Collapse the "more-text" div
+            $(this).parent("p").parent(".more-text").slideToggle();
+
+            // Show the "read more" text
+            $(this).parent("p").parent(".more-text").prev("p").children(".more-link").toggle();
+
+            e.preventDefault();
+        })
+    });
+</script>
+
+</body>
+</html>

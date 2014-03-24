@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="post">
+    <h1>Contact Me</h1>
+    <form class="contact-form" name="contact" action="" method="post">
+        {{form.hidden_tag()}}
+
+        <label>Name</label>
+        {{form.name}}
+        {% for error in form.errors.name %}
+        <span style="color: darkred;">[{{error}}]</span>
+        {% endfor %}
+
+        <label>Email</label>
+        {% for error in form.errors.email %}
+        <label style="color: darkred;">[{{error}}]</label>
+        {% endfor %}
+        {{form.email}}
+
+        <label>Message</label>
+        {% for error in form.errors.message %}
+        <label style="color: darkred;">[{{error}}]</label>
+        {% endfor %}
+        {{form.message}}
+
+        <div class="row">
+            <div class="span5" style="min-width: 455px;">
+                    <p>
+                        {% for error in form.errors.recaptcha %}
+                        <label style="color: darkred;">[{{error}}]</label>
+                        {% endfor %}
+                        {{form.recaptcha}}
+                    </p>
+            </div>
+            <div class="span2">
+                <button style="position: relative; top: 5px; float: left;" class="button" type="submit">Send</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+{% endblock %}

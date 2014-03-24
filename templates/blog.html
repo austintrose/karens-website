@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Posts</h1>
+<ul class="blog-posts">
+
+    <li class="last">
+        <div class="post">
+
+            <h2>Multimodal Interfaces</h2>
+
+            <h4>
+                Blending Gaze, Gesture, Movement and Speech to Overcome the Limitations of Keyboard,
+                Mouse, &amp; Touchscreen
+            </h4>
+
+            <p>
+                The traditional computer keyboard and mouse is beginning to take a back seat to
+                multimodal interfaces. These interfaces simultaneously process two or more input modes
+                such as speech, hand gestures, gaze, body movement, pen, or touch – enabling users to
+                interact with video, games, computer displays through gesture, speech, facial
+                expression, and touch.&nbsp;<a href="#" class="more-link">...read more</a>
+            </p>
+
+            <div class="more-text">
+                <p>
+                    Today, multimodal educational interfaces engage children in two -way conversations
+                    with onscreen characters in response to the child’s physical and spoken responses
+                    to questions and suggestions.  As TV characters speak, children can participate in
+                    on-screen activities by responding and interacting in intuitive, physical ways by
+                    jumping, moving forwards or backwards, catching and throwing balls and speaking.
+                </p>
+
+                <p>
+                    Fitness programs for adults can detect a player’s physical movement -- even subtle
+                    shifts in balance – and guide them through an optimized workout offering feedback
+                    in real-time on the execution of specific exercises.
+                </p>
+
+                <p>
+                    However, despite the many innovations in the consumer arena, most user interfaces
+                    for language – learning still consist of keyboards, mice or touchscreen
+                    interfaces.  The issue is that these click-and-type / touch interfaces exclude
+                    many hints and signals, explicit or implicit, which are integral to language
+                    interactions.  Human-to-human communication depends upon and integrates gaze,
+                    gesture, movement and speech.  And multimodal interfaces dramatically increase the
+                    quality of human-to- computer interaction.
+                </p>
+
+                <p>
+                    For example, listening behavior for a conversational virtual agent can be
+                    generated from the simultaneous processing of a user‘s speech and non-speech
+                    sounds, in parallel with the user’s gaze, triggering backchannel signals for the
+                    on-screen virtual agent according to the user’s visual and acoustic behavior.
+                    (Bevacqua, et al, 2012)
+                </p>
+
+                <div class="row">
+                    <div class="span6 offset1">
+                        <div class="well image-well">
+                            <span class="image-section">
+                                <img src="{{ url_for('static', filename="img/posts/1/1.jpg") }}"/><br>
+                                <span class="image-text">Listening behaviors of virtual agents in response to multimodal input.</span><br>
+                                <span class="image-text">source: <a href="http://www.sciencedirect.com/">sciencedirect.com</a></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <p>
+                    Multimodal interfaces do not simply offer the option of using a different mode of
+                    communication (e.g. speaking vs clicking – or a button vs writing).  They can, for
+                    example, offer significant improvements in the recognition of speech of accented
+                    L2 speakers.  When the L2 speaker’s gestures and facial expression are processed
+                    simultaneously with the accented speech, the speech recognition is far more
+                    successful (Oviatt, 2008).
+                </p>
+
+                <p>
+                    Multimodal interfaces open the door to significant improvement in all
+                    human-computer interactions and, in particular, for L2 users.  I first attempted
+                    prototyping multimodal interfaces for language learners using the DDR (Dance-dance
+                    revolution) mats in the 1990’s. Now, I am hopeful that we will begin seeing more
+                    multimodal applications for language learners.  In July 2013, I will be presenting
+                    a paper at WorldCALL conference in Glasgow on multimodal reviewing the
+                    capabilities of a variety of multimodal interfaces to give conference goers a
+                    glimpse of some of the intriguing applications as well as selected, relevant
+                    research in applied linguistics, gaming, and the behavioral sciences.
+                </p>
+
+                <p>
+                    <a href="#" class="less-link">Collapse post</a>
+                </p>
+            </div>
+        </div>{# post #}
+    </li>
+
+</ul>
+{% endblock %}
